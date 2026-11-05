@@ -16,3 +16,4 @@ Taskly is a clean, modern, offline-first To-Do List web application built with v
 ## Getting Started
 
 Open [`index.html`](index.html) in any modern browser. No build steps or server dependencies are required.
+

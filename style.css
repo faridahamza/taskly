@@ -74,7 +74,7 @@ body {
    HEADER
    ============================================================ */
 .app-header {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #1e1b4b;
   color: #fff;
   padding: 24px 24px 20px;
 }
@@ -177,29 +177,21 @@ body {
   align-items: center;
   gap: 3px;
   box-shadow: var(--shadow-sm);
-  border-top: 3px solid transparent;
+  border: 1px solid var(--clr-border);
   transition: transform var(--transition), box-shadow var(--transition);
   cursor: default;
 }
 .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
-.stat-total     { border-top-color: var(--clr-primary); }
-.stat-pending   { border-top-color: var(--clr-warning); }
-.stat-completed { border-top-color: var(--clr-success); }
-.stat-overdue   { border-top-color: var(--clr-danger);  }
-
 .stat-number {
   font-size: 1.75rem;
   font-weight: 800;
   line-height: 1;
+  color: var(--clr-text);
 }
-.stat-total     .stat-number { color: var(--clr-primary); }
-.stat-pending   .stat-number { color: var(--clr-warning); }
-.stat-completed .stat-number { color: var(--clr-success); }
-.stat-overdue   .stat-number { color: var(--clr-danger);  }
 
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -328,7 +320,7 @@ body {
 .task-item {
   background: var(--clr-surface);
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--clr-border);
+  border: 1px solid var(--clr-border);
   padding: 14px 16px;
   display: flex;
   align-items: flex-start;
@@ -345,22 +337,16 @@ body {
 }
 .task-item:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
 
-/* Priority left-border */
-.task-item[data-priority="high"]   { border-left: 4px solid var(--clr-danger);  }
-.task-item[data-priority="medium"] { border-left: 4px solid var(--clr-warning); }
-.task-item[data-priority="low"]    { border-left: 4px solid var(--clr-success); }
-
 /* Completed */
 .task-item.completed {
   opacity: 0.6;
-  background: #fafffe;
-  border-color: #c8e6c9;
+  background: var(--clr-surface);
+  border-color: var(--clr-border);
 }
 
 /* Overdue */
 .task-item.overdue:not(.completed) {
-  border-color: #fca5a5;
-  background: #fff8f8;
+  border-color: var(--clr-border);
 }
 
 /* ---- Checkbox ---- */
@@ -746,14 +732,7 @@ body {
    TOAST NOTIFICATIONS
    ============================================================ */
 .toast-container {
-  position: fixed;
-  bottom: 24px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 2000;
-  pointer-events: none;
+  display: none;
 }
 .toast {
   display: flex;
